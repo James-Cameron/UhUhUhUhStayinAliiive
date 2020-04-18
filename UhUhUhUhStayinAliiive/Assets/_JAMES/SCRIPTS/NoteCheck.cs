@@ -89,6 +89,7 @@ public class NoteCheck : MonoBehaviour
                 Instantiate(missEffect, transform.position, missEffect.transform.rotation);
 
             }
+            gameObject.SetActive(false);
 
         }
 

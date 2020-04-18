@@ -28,7 +28,8 @@ public class NoteCheck : MonoBehaviour
 
                 // GameManager.instance.NoteHit();
 
-                // IF WE ARE WITHING CERTAIN THRESHOLDS WE WILL GET BONUS POINTS
+                
+                // IF WE ARE WITHIN CERTAIN THRESHOLDS WE WILL GET BONUS POINTS
                 if (Mathf.Abs(transform.position.y) > .25)
                 {
                     Debug.Log("hit");
@@ -56,7 +57,7 @@ public class NoteCheck : MonoBehaviour
                     Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
 
                 }
-
+                
             }
 
         }
@@ -76,16 +77,21 @@ public class NoteCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Activator")
+        if (gameObject.activeInHierarchy)
         {
-            canBePressed = false;
+            if (other.tag == "Activator")
+            {
+                canBePressed = false;
 
-            GameManager.instance.NoteMiss();
+                GameManager.instance.NoteMiss();
 
-            // INSTANTIATE OUR SPECIAL FX
-            Instantiate(missEffect, transform.position, missEffect.transform.rotation);
+                // INSTANTIATE OUR SPECIAL FX
+                Instantiate(missEffect, transform.position, missEffect.transform.rotation);
+
+            }
 
         }
+
 
     }
 

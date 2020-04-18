@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this; //I BELIEVE THIS MAKES THE GAMEMANAGER A SINGLETON?
 
-        scoreText.text = "Score: 0";
+        scoreText.text = "Score: 0"; // INITIALIZE THE SCORE TEXT AT 0
 
         currentMultiplier = 1;
 
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
             {
                 resultsScreen.SetActive(true); // THEN ACTIVATE THE RESULTS SCREEN
 
+                // DISPLAY THE SCORE AND RANKINGS
                 normalsText.text = normalHits.ToString();
                 goodsText.text = goodHits.ToString();
                 perfectsText.text = perfectHits.ToString();
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Note hit!");
 
-        if (currentMultiplier - 1 < multiplierThresholds.Length)
+        if (currentMultiplier - 1 < multiplierThresholds.Length) // ENSURES THE CURRENT MULTIPLYER DOES NOT EXCEED THE LENGTH OF OUR MULTIPLYER THREHOLD ARRAY
         {
             multiplierTracker++; // EACH NOTE HIT WE ADD ONE TO OUR MULTIPLIER TRACKER
 
@@ -133,7 +134,6 @@ public class GameManager : MonoBehaviour
 
         multiplierText.text = "Multiplier: x" + currentMultiplier;
 
-        currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "Score: " + currentScore;
 
     }

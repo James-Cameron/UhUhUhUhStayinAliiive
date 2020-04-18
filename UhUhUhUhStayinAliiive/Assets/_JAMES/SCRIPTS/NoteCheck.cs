@@ -8,6 +8,8 @@ public class NoteCheck : MonoBehaviour
 
     public KeyCode keyToPress;
 
+    public GameObject hitEffect, goodEffect, perfectEffect, missEffect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,37 @@ public class NoteCheck : MonoBehaviour
             {
                 gameObject.SetActive(false);
 
-                GameManager.instance.NoteHit();
+                // GameManager.instance.NoteHit();
+
+                // IF WE ARE WITHING CERTAIN THRESHOLDS WE WILL GET BONUS POINTS
+                if (Mathf.Abs(transform.position.y) > .25)
+                {
+                    Debug.Log("hit");
+                    GameManager.instance.NormalHit(); //ADD CORRSPONGDING SCORE VALUE
+
+                    // INSTANTIATE OUR SPECIAL FX
+                    Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
+
+                }
+                else if (Mathf.Abs(transform.position.y) > .05)
+                {
+                    Debug.Log("good hit");
+                    GameManager.instance.GoodHit(); //ADD CORRSPONGDING SCORE VALUE
+
+                    // INSTANTIATE OUR SPECIAL FX
+                    Instantiate(goodEffect, transform.position, goodEffect.transform.rotation);
+
+                }
+                else
+                {
+                    Debug.Log("perfect hit");
+                    GameManager.instance.PerfectHit(); //ADD CORRSPONGDING SCORE VALUE
+
+                    // INSTANTIATE OUR SPECIAL FX
+                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+
+                }
+
             }
 
         }
@@ -49,6 +81,10 @@ public class NoteCheck : MonoBehaviour
             canBePressed = false;
 
             GameManager.instance.NoteMiss();
+
+            // INSTANTIATE OUR SPECIAL FX
+            Instantiate(missEffect, transform.position, missEffect.transform.rotation);
+
         }
 
     }

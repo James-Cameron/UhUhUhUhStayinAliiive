@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLayerCTRL : MonoBehaviour
+public class PlayerCTRL : MonoBehaviour
 {
     Rigidbody2D rb;
     BoxCollider2D myBoxCollider;

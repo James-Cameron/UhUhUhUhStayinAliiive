@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/_JAMES/SCENES/Main.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_JAMES/SCENES/Main Menu.unity
+    guid: 12d6f8295d9547f47b93b9fd04b0c589
+  - enabled: 1
+    path: Assets/_JAMES/SCENES/LVL1.unity
+    guid: fe4ffec5b0a2fca4fad8ea1a00837385
+  - enabled: 1
+    path: Assets/_JAMES/SCENES/LVL2.unity
+    guid: 4904f83e9e5dbb744a85767edc3e1fa9
   m_configObjects: {}

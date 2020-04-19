@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int scorePerNote = 100;
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
+    public int Lives = 4;
 
     public int currentMultiplier;
     public int multiplierTracker;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public Text scoreText;
     public Text multiplierText;
+    public Text livesText;
 
     public float totalNotes;
     public float normalHits;
@@ -177,6 +180,36 @@ public class GameManager : MonoBehaviour
 
         NoteHit();
         perfectHits++; // KEEPING TRACK OF OUR TOTAL PERFECT HITS
+
+    }
+
+    public void ProcessPlayerDeath()
+    {
+        if (Lives > 1)
+        {
+            TakeLife();
+        }
+        else
+        {
+            ResetGameSession();
+        }
+
+    }
+
+    void ResetGameSession()
+    {
+        // DELETE THE GAMESESSION OBJECT AND START FROM THE MAIN MENU
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
+
+    }
+
+    void TakeLife()
+    {
+        // REDUCE LIVES BY ONE
+        Lives--;
+
+        livesText.text = "Lives: " + Lives;
 
     }
 

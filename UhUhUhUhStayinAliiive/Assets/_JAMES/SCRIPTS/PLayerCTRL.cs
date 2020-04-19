@@ -7,7 +7,7 @@ public class PlayerCTRL : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D myBoxCollider;
 
-    public float jumpSpeed = 5f;
+    public float runSpeed = 5f;
 
 
     // Start is called before the first frame update
@@ -21,21 +21,14 @@ public class PlayerCTRL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
-    }
+        float controlThrow = Input.GetAxis("Horizontal");
+        Vector2 runVelocity = new Vector2(controlThrow * runSpeed, rb.velocity.y);
+        rb.velocity = runVelocity;
 
-    void Jump()
-    {
-        if (!myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            return;
-
-        if (Input.GetButton("Jump"))
-        {
-            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-            rb.velocity += jumpVelocityToAdd;
-        }
+        bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
     }
+
 
 
 

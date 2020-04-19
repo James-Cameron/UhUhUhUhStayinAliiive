@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnProjectile : MonoBehaviour
 {
-    public int maxRange = 10;
-    public int spawnThreshold = 8;
+    public int maxRange = 1000;
+    public int spawnThreshold = 990;
 
     public Rigidbody2D projectile;
 
@@ -31,12 +31,12 @@ public class SpawnProjectile : MonoBehaviour
         if (rewardChance > spawnThreshold)
         {
             // SPAWN AN INSTANCE OF THE PROJECTILE
-            Rigidbody clone;
+            Rigidbody2D clone;
 
 
             // how to make this 2d??
-            // clone = Instantiate(projectile, transform.position, transform.rotation);
-            // clone.velocity = transform.TransformDirection(Vector3.forward); // NEED TO ADJUST THIS FOR A 2D GAME
+            clone = Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+
         }
 
     }

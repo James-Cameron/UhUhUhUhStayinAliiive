@@ -30,7 +30,7 @@ public class NoteCheck : MonoBehaviour
 
                 
                 // IF WE ARE WITHIN CERTAIN THRESHOLDS WE WILL GET BONUS POINTS
-                if (Mathf.Abs(transform.position.y) > .25)
+                if (Mathf.Abs((transform.position.y) - 12) > .25)
                 {
                     Debug.Log("hit");
                     GameManager.instance.NormalHit(); //ADD CORRSPONGDING SCORE VALUE
@@ -39,7 +39,7 @@ public class NoteCheck : MonoBehaviour
                     Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
 
                 }
-                else if (Mathf.Abs(transform.position.y) > .05)
+                else if (Mathf.Abs((transform.position.y) - 12) > .05)
                 {
                     Debug.Log("good hit");
                     GameManager.instance.GoodHit(); //ADD CORRSPONGDING SCORE VALUE

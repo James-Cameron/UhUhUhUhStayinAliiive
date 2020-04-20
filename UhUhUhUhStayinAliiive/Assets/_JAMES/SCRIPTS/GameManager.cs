@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int scorePerNote = 100;
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
-    public int Lives = 10;
+    public int Lives = 4;
 
     public int currentMultiplier;
     public int multiplierTracker;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Activator
   - Ground
+  - Crowd
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
-  - 
+  - Crowd
+  - Bottle
   - 
   - 
   - 

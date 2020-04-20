@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
                                 if (percentageHit > 95)
                                 {
                                     rankValue = "S";
+                                    Lives++;
                                 }
                             }
                         }

@@ -3210,7 +3210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lives: 4'
+  m_Text: 'Lives: 10'
 --- !u!222 &258435516
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30331,7 +30331,7 @@ MonoBehaviour:
   scorePerNote: 100
   scorePerGoodNote: 125
   scorePerPerfectNote: 150
-  Lives: 4
+  Lives: 10
   currentMultiplier: 1
   multiplierTracker: 0
   multiplierThresholds: 040000000800000010000000

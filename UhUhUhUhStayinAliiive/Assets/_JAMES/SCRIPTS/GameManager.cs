@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
 
         NoteHit();
         perfectHits++; // KEEPING TRACK OF OUR TOTAL PERFECT HITS
-
+        Lives++;
     }
 
     public void ProcessPlayerDeath()

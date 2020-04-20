@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 missesText.text = missedHits.ToString();
 
                 float totalHit = normalHits + goodHits + perfectHits;
-                float percentageHit = (totalHit / totalNotes);
+                float percentageHit = (totalHit / totalNotes) * 100;
                 percentageHitText.text = percentageHit.ToString("F1") + "%";
 
                 string rankValue = "F";

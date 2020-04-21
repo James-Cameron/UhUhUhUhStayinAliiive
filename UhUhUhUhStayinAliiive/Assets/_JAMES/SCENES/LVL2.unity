@@ -30604,14 +30604,14 @@ MonoBehaviour:
   goodHits: 0
   perfectHits: 0
   missedHits: 0
-  resultsScreen: {fileID: 0}
-  percentageHitText: {fileID: 0}
-  normalsText: {fileID: 0}
-  goodsText: {fileID: 0}
-  perfectsText: {fileID: 0}
-  missesText: {fileID: 0}
-  rankText: {fileID: 0}
-  finalScoreText: {fileID: 0}
+  resultsScreen: {fileID: 1308496269}
+  percentageHitText: {fileID: 1735905917}
+  normalsText: {fileID: 225268571}
+  goodsText: {fileID: 372046026}
+  perfectsText: {fileID: 1758613480}
+  missesText: {fileID: 721246455}
+  rankText: {fileID: 288776143}
+  finalScoreText: {fileID: 1060697649}
 --- !u!4 &2029598998
 Transform:
   m_ObjectHideFlags: 0
